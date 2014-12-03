@@ -111,6 +111,9 @@ var hawtioPluginLoader = (function(self, window, undefined) {
     }
   };
 
+  /**
+   * Prints information about registered modules and URLs
+   */
   self.debug = function() {
     LOG.debug("urls and modules");
     LOG.debug(self.urls);
@@ -165,7 +168,7 @@ var hawtioPluginLoader = (function(self, window, undefined) {
         $.ajaxSetup({ async: false });
         scriptsToLoadLength--;
         if (lcb) {
-          lcb.scriptLoaderCallback(lcb, totalScripts, scriptsToLoadLength);
+          lcb.scriptLoaderCallback(totalScripts, scriptsToLoadLength);
         }
         if (scriptsToLoadLength == 0) {
           bootstrap();
@@ -202,7 +205,7 @@ var hawtioPluginLoader = (function(self, window, undefined) {
     var urlLoaded = function () {
       urlsToLoadLength--;
       if (lcb) {
-        lcb.urlLoaderCallback(lcb, totalUrls, urlsToLoadLength);
+        lcb.urlLoaderCallback(totalUrls, urlsToLoadLength);
       }
       if (urlsToLoadLength == 0) {
         // load scripts after loading plugin info from urls
@@ -264,10 +267,10 @@ var hawtioPluginLoader = (function(self, window, undefined) {
 
   // sets a callback invoked after all modules and urls are loaded
   self.setLoaderCallback({
-    scriptLoaderCallback: function (self, total, remaining) {
+    scriptLoaderCallback: function (total, remaining) {
       LOG.debug("Total scripts: ", total, " Remaining: ", remaining);
     },
-    urlLoaderCallback: function (self, total, remaining) {
+    urlLoaderCallback: function (total, remaining) {
       LOG.debug("Total URLs: ", total, " Remaining: ", remaining);
     }
   });

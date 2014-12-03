@@ -98,10 +98,10 @@ describe("Tests of hawtio plugin loader", function () {
     var urlCbResults = [];
     var scriptCbResults = [];
     hawtioPluginLoader.setLoaderCallback({
-      urlLoaderCallback: function(lcb, totalUrls, urlsToLoadLength) {
+      urlLoaderCallback: function(totalUrls, urlsToLoadLength) {
         urlCbResults.push({ total: totalUrls, count: urlsToLoadLength });
       },
-      scriptLoaderCallback: function(lcb, totalScripts, scriptsToLoadLength) {
+      scriptLoaderCallback: function(totalScripts, scriptsToLoadLength) {
         scriptCbResults.push({ total: totalScripts, count: scriptsToLoadLength });
       }
     });
@@ -116,10 +116,10 @@ describe("Tests of hawtio plugin loader", function () {
     var urlCbResults = [];
     var scriptCbResults = [];
     hawtioPluginLoader.setLoaderCallback({
-      urlLoaderCallback: function(lcb, totalUrls, urlsToLoadLength) {
+      urlLoaderCallback: function(totalUrls, urlsToLoadLength) {
         urlCbResults.push({ total: totalUrls, count: urlsToLoadLength });
       },
-      scriptLoaderCallback: function(lcb, totalScripts, scriptsToLoadLength) {
+      scriptLoaderCallback: function(totalScripts, scriptsToLoadLength) {
         scriptCbResults.push({ total: totalScripts, count: scriptsToLoadLength });
       }
     });
@@ -168,10 +168,10 @@ describe("Tests of hawtio plugin loader", function () {
       var urlCbResults = [];
       var scriptCbResults = [];
       hawtioPluginLoader.setLoaderCallback({
-        urlLoaderCallback: function(lcb, totalUrls, urlsToLoadLength) {
+        urlLoaderCallback: function(totalUrls, urlsToLoadLength) {
           urlCbResults.push({ total: totalUrls, count: urlsToLoadLength });
         },
-        scriptLoaderCallback: function(lcb, totalScripts, scriptsToLoadLength) {
+        scriptLoaderCallback: function(totalScripts, scriptsToLoadLength) {
           scriptCbResults.push({ total: totalScripts, count: scriptsToLoadLength });
         }
       });
@@ -192,10 +192,10 @@ describe("Tests of hawtio plugin loader", function () {
       var urlCbResults = [];
       var scriptCbResults = [];
       hawtioPluginLoader.setLoaderCallback({
-        urlLoaderCallback: function(lcb, totalUrls, urlsToLoadLength) {
+        urlLoaderCallback: function(totalUrls, urlsToLoadLength) {
           urlCbResults.push({ total: totalUrls, count: urlsToLoadLength });
         },
-        scriptLoaderCallback: function(lcb, totalScripts, scriptsToLoadLength) {
+        scriptLoaderCallback: function(totalScripts, scriptsToLoadLength) {
           scriptCbResults.push({ total: totalScripts, count: scriptsToLoadLength });
         }
       });
