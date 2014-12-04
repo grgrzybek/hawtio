@@ -1,4 +1,3 @@
-
 module Hawtio {
 
   /**
@@ -8,22 +7,23 @@ module Hawtio {
 
     /**
      * Invoked after set of plugin metadata was loaded from given URL
-     * @param callback
      * @param totalUrls
      * @param urlsToLoadLength
      */
-    urlLoaderCallback(callback:LoaderCallback, totalUrls:number, urlsToLoadLength:number):void;
+    urlLoaderCallback(totalUrls:number, urlsToLoadLength:number):void;
 
     /**
      * Invoked after single script of a plugin was fetched
-     * @param callback
      * @param totalUrls
      * @param urlsToLoadLength
      */
-    scriptLoaderCallback(callback:LoaderCallback, totalUrls:number, urlsToLoadLength:number):void;
+    scriptLoaderCallback(totalUrls:number, urlsToLoadLength:number):void;
 
   }
 
+  /**
+   * Static (non-instance) part of Hawtio Plugin Loader interface
+   */
   export interface HawtioPluginLoaderStatic {
 
     /**
@@ -56,7 +56,7 @@ module Hawtio {
     /**
      * Returns a list of registered modules
      */
-    getModules(): Array<string>;
+    getModules():Array<string>;
 
     /**
      * Parses given (or <code>window.location.href</code>) query string into map of string -> string[]
@@ -91,4 +91,4 @@ module Hawtio {
  *  - Angular.js modules
  * Then, at some point ("DOMContentLoaded") all modules are used to bootstrap Angular.js application
  */
-declare var hawtioPluginLoader: Hawtio.HawtioPluginLoaderStatic;
+declare var hawtioPluginLoader:Hawtio.HawtioPluginLoaderStatic;
