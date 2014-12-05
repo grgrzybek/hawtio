@@ -15,6 +15,11 @@ describe("core services test", function () {
     });
   });
 
+  it("has access to viewRegistry", inject(function(viewRegistry) {
+    expect(viewRegistry).toBeDefined();
+    expect(viewRegistry).not.toBe(null);
+  }));
+
   it("Should use dummy local storage provided by Core module", function () {
     module(function($provide) {
       $provide.value("$window", {});
@@ -23,6 +28,7 @@ describe("core services test", function () {
       expect(localStorage).toBeDefined();
       expect(localStorage).not.toBe(null);
       expect(localStorage.dummy).toBe(true);
+      expect(localStorage.mock).not.toBeDefined();
     });
   });
 

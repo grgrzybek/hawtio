@@ -49,9 +49,6 @@ module Core {
     });
   }]);
 
-  export var AppController = _module.controller("Core.AppController", ["$scope", "$route", "$location", ($scope, $route, $location) => {
-  }]);
-
 }
 
 // each module should register itself in hawtioPluginLoader

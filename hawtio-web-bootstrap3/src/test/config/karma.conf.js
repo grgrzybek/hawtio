@@ -29,13 +29,16 @@ module.exports = function(config) {
         basedir + "lib/jolokia/debug/jolokia.js",
         basedir + "lib/jolokia/debug/jolokia-simple.js",
         libdir + "hawtio-plugin-loader.js",
+        // disable bootstrapping Angular.js (for tests)
+        testdir + "specs/lib/disable-hawtio-plugin-loader.js",
         basedir + "bower_components/angular/angular.js",
         basedir + "bower_components/angular-route/angular-route.js",
         basedir + "bower_components/angular-mocks/angular-mocks.js",
         basedir + "bower_components/toastr/toastr.min.js",
-        basedir + "app/core/js/*.ts", // entire "core" module
-        /* do not include entire app, we should test modules in separation */
-        //basedir + "app/app.js",
+        // it takes too much time to tsc each *.ts file separately
+        // basedir + "app/core/js/**/*.ts", // entire "core" module
+        // let's load entire application (but without bootstrapping Angular.js)
+        basedir + "app/app.js",
         // test specifications
         testdir + "specs/specs-js/**/*.js",
         // other resources (e.g., for $.ajax())

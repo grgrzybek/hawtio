@@ -1,5 +1,6 @@
 /// <reference path="utils.ts" />
 /// <reference path="_module.ts" />
+/// <reference path="../../../../d.ts/angularjs/angular.d.ts" />
 module Core {
 
   /*
