@@ -32,6 +32,7 @@
     "grunt-bower": "~0.16.0",
     "grunt-bower-task": "~0.4.0",
     "karma-jasmine-ajax": "~0.1.4",
-    "redirecter": "~0.2.3"
+    "redirecter": "~0.2.3",
+    "karma-typescript-preprocessor": "0.0.14"
   }
 }

@@ -31,7 +31,10 @@ module.exports = function(config) {
         libdir + "hawtio-plugin-loader.js",
         basedir + "bower_components/angular/angular.js",
         basedir + "bower_components/angular-route/angular-route.js",
+        basedir + "bower_components/angular-mocks/angular-mocks.js",
         basedir + "bower_components/toastr/toastr.min.js",
+        basedir + "app/core/js/*.ts", // entire "core" module
+        /* do not include entire app, we should test modules in separation */
         //basedir + "app/app.js",
         // test specifications
         testdir + "specs/specs-js/**/*.js",
@@ -49,6 +52,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      "**/*.ts": [ "typescript" ]
     },
 
 
@@ -82,6 +86,20 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: true
+    singleRun: true,
+
+
+    typescriptPreprocessor: {
+      options: {
+        removeComments: true,
+        module: "commonjs",
+        target: "ES5",
+        declaration: false,
+        sourceMap: false
+      },
+      transformPath: function(path) {
+        return path.replace(/\.ts$/, '.js');
+      }
+    }
   });
 };

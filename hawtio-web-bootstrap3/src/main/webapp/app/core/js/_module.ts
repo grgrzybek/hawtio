@@ -1,3 +1,7 @@
+/// <reference path="../../../../d.ts/angularjs/angular.d.ts" />
+/// <reference path="../../../../d.ts/angularjs/angular-route.d.ts" />
+/// <reference path="../../../../d.ts/hawtio-plugin-loader.d.ts" />
+/// <reference path="../../../../d.ts/js-logger.d.ts" />
 /**
  * Main module of hawtio.
  * (Hawtio should be able to run with only this module enabled)
@@ -42,11 +46,10 @@ module Core {
 
   _module.run(["$rootScope", ($rootScope) => {
     $rootScope.$on("$routeChangeSuccess", (event:ng.IAngularEvent) => {
-      Logger.get("route").info(event);
     });
   }]);
 
-  export var AppController = _module.controller("Core.AppController", ["$scope", "$route", "$location", ($sope, $route, $location) => {
+  export var AppController = _module.controller("Core.AppController", ["$scope", "$route", "$location", ($scope, $route, $location) => {
   }]);
 
 }
