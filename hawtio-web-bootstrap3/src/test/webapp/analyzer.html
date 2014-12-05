@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>hawtio</title>
+
+    <style type="text/css">
+      table { border-collapse: collapse }
+      td, th { border: 1px solid #DDD; padding: 2px }
+      td { vertical-align: top }
+      td.module-name { color: #934; font-weight: bold; text-align: right }
+      ul, li { padding: 0; margin: 0 }
+      li { list-style-position: inside }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <h5>Dependency report</h5>
+      <div id="report"></div>
+
+      <h5>Legend</h5>
+      <ul>
+        <li>Ovals - modules (black: from hawt.io, red: external)</li>
+        <!--<li>Rectangles - services/factories/values</li>-->
+        <li>Black arrows - explicit module dependencies</li>
+        <li>Green arrows - implicit module dependencies (when module declares e.g., service, which depends on e.g., services from other modules)</li>
+      </ul>
+    </div>
+    <div style="border: 1px dashed gray; padding: 5px">
+      To create a diagram, copy&paste the bellow definition into <code>&lt;filename&gt;.dot</code> and then issue:<br />
+      <code>dot -Tpng &lt;filename&gt;.dot > &lt;filename&gt;.png</code>
+    </div>
+    <pre id="graph" style="font-size: 10px"></pre>
+
+    <script src="../../../src/main/webapp/bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="../../../src/main/webapp/bower_components/js-logger/src/logger.min.js"></script>
+    <script src="../../../src/main/webapp/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../../../src/main/webapp/bower_components/angular/angular.min.js"></script>
+    <script src="app/app-analyzer.js"></script>
+    <!-- app.js will run against mocked angular.js -->
+    <script src="../../../src/main/webapp/app/app.js"></script>
+    <!-- to make a report on analyzed dependencies -->
+    <script src="app/app-report.js"></script>
+  </body>
+</html>
