@@ -7,6 +7,12 @@ var hawtioPluginLoader = (function(self, window, undefined) {
 
   var LOG = Logger.get("PluginLoader");
 
+  /**
+   * May be set to false to prevent (e.g., unit or integration tests) from bootstraping Angular.js
+   * @type {boolean}
+   */
+  self.autoStart = true;
+
   // single instance of loader callback
   self.loaderCallback = null;
 

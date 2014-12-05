@@ -32,7 +32,7 @@ module.exports = function(config) {
         basedir + "bower_components/angular/angular.js",
         basedir + "bower_components/angular-route/angular-route.js",
         basedir + "bower_components/toastr/toastr.min.js",
-        basedir + "app/app.js",
+        //basedir + "app/app.js",
         // test specifications
         testdir + "specs/specs-js/**/*.js",
         // other resources (e.g., for $.ajax())

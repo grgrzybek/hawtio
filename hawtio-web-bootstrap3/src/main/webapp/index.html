@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
+  <script>
+    var base = window.location.pathname.split("/", 2)[1];
+    document.write(base === "" ? "<base href='/' />" : "<base href='/" + base + "/' />");
+  </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>hawtio</title>
@@ -9,7 +13,8 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="bower_components/toastr/toastr.min.css" />
+  <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css" />
+  <!--<link rel="stylesheet" href="bower_components/toastr/toastr.min.css" />-->
   <link rel="stylesheet" href="css/site-base.css" />
   <link rel="stylesheet" href="css/vendor.css" />
   <link rel="stylesheet" href="css/dev.css" />
@@ -18,13 +23,55 @@
 
 <body>
 
-  <div id="log-panel" style="display: block">
+  <div id="log-panel" style="display: none">
     <div>
       <ul id="log-panel-statements"></ul>
     </div>
   </div>
 
-  <div id="main-body">
+  <div id="main-body" ng-controller="Core.AppController">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <!-- upper navigation -->
+      <div class="container-fluid main-nav-upper">
+        <!-- left-top-most Home link with branding -->
+        <div class="navbar-header">
+          <a href="#" title="Go to home" class="navbar-brand hawtio">hawtio</a>
+        </div>
+        <!-- right-top-most menu (console, help, user-menu) -->
+        <ul class="nav navbar-nav pull-right">
+          <!-- dynamic links, hook for plugins-->
+          <li><a href="#" title="Show the logging console"><i class="fa fa-desktop"></i></a></li>
+          <li><a href="#" title="Read the help about how to use this console"><i class="fa fa-question-circle"></i></a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" title="Preferences (and logout)">
+              <i class="fa fa-user"></i><span>admin</span><i class="fa fa-angle-down"></i>
+            </a>
+            <ul class="dropdown-menu pull-right" role="menu">
+              <li>
+                <a href="#" title="Edit your preferences"><i class="fa fa-cogs"></i> Preferences</a>
+                <a href="#" title="Log out"><i class="fa fa-sign-out"></i> Log Out</a>
+                <a href="#" title="About"><i class="fa fa-info"></i> About</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- main navigation (perspective switcher, main tabs -->
+      <div class="container-fluid main-nav-lower">
+        <ul class="nav navbar-nav pull-left">
+          <li>
+            <a href="/welcome">Welcome</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="main" class="container-fluid">
+      <div ng-view></div>
+    </div>
   </div>
 
   <!-- Lo-Dash (Underscore) -->
@@ -43,6 +90,9 @@
 
   <!-- Now load and set up the plugin loader -->
   <script src="lib/hawtio-plugin-loader.js"></script>
+
+  <!-- Bootstrap (unless it conflicts with angular-ui/ui-bootstrap) -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
   <!-- Angular -->
   <script src="bower_components/angular/angular.js"></script>

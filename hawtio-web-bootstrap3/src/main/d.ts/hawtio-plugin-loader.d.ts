@@ -1,4 +1,4 @@
-module Hawtio {
+declare module Hawtio {
 
   /**
    * Object containing callbacks invoked during the process of loading plugin URLs and scripts
@@ -80,6 +80,10 @@ module Hawtio {
      */
     loadPlugins(callback:() => void):void;
 
+    /**
+     * Flag which allows to configure whether application will bootstrap Angular.js
+     */
+    autoStart:boolean;
   }
 
 }

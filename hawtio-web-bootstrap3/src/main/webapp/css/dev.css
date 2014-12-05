@@ -1,4 +1,4 @@
-div#log-panel { background-color: #FEE; padding: 2px; position: fixed; top: 0; left: 30px; right: 30px; bottom: 50% }
+div#log-panel { background-color: #F7F7F7; padding: 2px; position: fixed; top: 0; left: 30px; right: 30px; bottom: 50% }
 ul#log-panel-statements {
   padding: 0; margin: 0;
   list-style: none inside;
