@@ -1,0 +1,15 @@
+div#log-panel { background-color: #FEE; padding: 2px; position: fixed; top: 0; left: 30px; right: 30px; bottom: 50% }
+ul#log-panel-statements {
+  padding: 0; margin: 0;
+  list-style: none inside;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 20px;
+  overflow-y: auto;
+}
+ul#log-panel-statements li {
+  margin: 1px 0 1px 5px;
+  padding: 1px 0 1px 5px;
+  border-left: 3px solid blue;
+}
+pre { margin: 0; padding: 3px }
+span.green { color: green; font-weight: bold }

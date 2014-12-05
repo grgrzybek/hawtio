@@ -580,5 +580,13 @@
           </modules>
       </profile>
 
+    <profile>
+      <id>bootstrap3</id>
+      <modules>
+        <module>hawtio-web-bootstrap3</module>
+      </modules>
+    </profile>
+
   </profiles>
+
 </project>

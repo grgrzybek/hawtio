@@ -1,0 +1,1 @@
+window.result["s2"] = "s2";

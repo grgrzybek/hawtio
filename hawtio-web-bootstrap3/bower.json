@@ -1,0 +1,32 @@
+{
+  "name": "hawtio",
+  "version": "1.5.0",
+  "description": "The hawtio management console",
+  "homepage": "http://hawt.io",
+  "main": "src/main/webapp/app/app.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "hawtio"
+  ],
+  "license": "Apache 2.0",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.3.1",
+    "angular": "~1.3.4",
+    "angular-route": "~1.3.4",
+    "js-logger": "~0.9.14",
+    "toastr": "~2.1.0",
+    "lodash": "~2.4.1"
+  }
+}

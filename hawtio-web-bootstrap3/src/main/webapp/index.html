@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>hawtio</title>
+
+  <link id="favicon" rel="icon" href="img/favicon.ico" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="bower_components/toastr/toastr.min.css" />
+  <link rel="stylesheet" href="css/site-base.css" />
+  <link rel="stylesheet" href="css/vendor.css" />
+  <link rel="stylesheet" href="css/dev.css" />
+  <!-- /CSS -->
+</head>
+
+<body>
+
+  <div id="log-panel" style="display: block">
+    <div>
+      <ul id="log-panel-statements"></ul>
+    </div>
+  </div>
+
+  <div id="main-body">
+  </div>
+
+  <!-- Lo-Dash (Underscore) -->
+  <script src="bower_components/lodash/dist/lodash.min.js"></script>
+
+  <!-- Logging first -->
+  <script src="bower_components/js-logger/src/logger.min.js"></script>
+  <script src="lib/hawtio-logger-init.js"></script>
+
+  <!-- JQuery -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
+  <!-- Jolokia -->
+  <script src="lib/jolokia/jolokia-min.js"></script>
+  <script src="lib/jolokia/jolokia-simple-min.js"></script>
+
+  <!-- Now load and set up the plugin loader -->
+  <script src="lib/hawtio-plugin-loader.js"></script>
+
+  <!-- Angular -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+
+  <!-- Notifications -->
+  <script src="bower_components/toastr/toastr.min.js"></script>
+
+  <!-- And finally the main app -->
+  <script src="app/app.js"></script>
+
+</body>
+</html>

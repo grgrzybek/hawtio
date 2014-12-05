@@ -1,0 +1,14 @@
+{
+  "plugin1": {
+    "Name": "plugin 1",
+    "Context": "/base/src/test/webapp/static-resources/plugin1",
+    "Domain": null,
+    "Scripts": ["script.js"]
+  },
+  "plugin2": {
+    "Name": "plugin 2",
+    "Context": "/base/src/test/webapp/static-resources/plugin2",
+    "Domain": null,
+    "Scripts": ["script1.js", "script2.js"]
+  }
+}
