@@ -7,6 +7,7 @@
 }
 
 /* Navigation */
+/* Upper */
 .main-nav-upper {
   height: 29px; /* because bootstrap uses box-sizing: border-box, border width doesn't add to navbar height */
   min-height: 28px;
@@ -20,10 +21,14 @@
 .main-nav-upper>ul.nav>li>a {
   line-height: 26px;
   position: relative;
-  top: 1px;
-  padding: 1px 15px 0 15px;
+  top: 0;
+  padding: 1px 15px 1px 15px;
   color: #777;
   text-align: center;
+}
+.main-nav-upper i.fa-desktop {
+  position: relative;
+  top: 1px
 }
 .main-nav-upper>ul.nav>li>a span {
   padding: 0 5px;
@@ -31,6 +36,7 @@
 .main-nav-upper ul.dropdown-menu>li>a>i {
   width: 20px; text-align: center;
 }
+/* Lower */
 .main-nav-lower {
   padding: 0;
   /** reintroduce Web 2.0 from Bootstrap 2.x */
@@ -40,4 +46,31 @@
 }
 .main-nav-lower>ul.nav>li>a {
   padding: 10px 15px;
+}
+
+/* Log panel */
+#log-panel {
+  position: fixed;
+  left: 30px;
+  right: 30px;
+  bottom: 50%;
+  z-index: 10000;
+  background: inherit;
+  transition: bottom 1s ease-in-out;
+}
+#log-panel-statements {
+  margin: 0;
+  position: absolute;
+  bottom: 20px;
+  overflow-y: auto;
+}
+#log-panel #close {
+  text-align: center;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  cursor: pointer;
+  background-color: #666;
+  color: #EEE;
 }

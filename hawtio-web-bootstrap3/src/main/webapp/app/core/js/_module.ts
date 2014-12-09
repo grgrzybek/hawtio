@@ -1,7 +1,7 @@
-/// <reference path="../../../../d.ts/angularjs/angular.d.ts" />
-/// <reference path="../../../../d.ts/angularjs/angular-route.d.ts" />
 /// <reference path="../../../../d.ts/hawtio-plugin-loader.d.ts" />
 /// <reference path="../../../../d.ts/js-logger.d.ts" />
+/// <reference path="../../../../d.ts/angularjs/angular.d.ts" />
+/// <reference path="../../../../d.ts/angularjs/angular-route.d.ts" />
 /**
  * Main module of hawtio.
  * (Hawtio should be able to run with only this module enabled)

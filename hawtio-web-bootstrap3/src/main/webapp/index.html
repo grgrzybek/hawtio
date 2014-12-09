@@ -26,6 +26,10 @@
   <div id="log-panel" style="display: none">
     <div>
       <ul id="log-panel-statements"></ul>
+      <div id="copy"></div>
+      <div id="close">
+        <i class="fa fa-chevron-up"></i>
+      </div>
     </div>
   </div>
 
@@ -69,8 +73,8 @@
       </div>
     </nav>
 
-    <div id="main" class="container-fluid">
-      <div ng-view></div>
+    <div id="main" class="container-fluid" ng-controller="Core.ViewController">
+      <div ng-include="viewPartial"></div>
     </div>
   </div>
 
