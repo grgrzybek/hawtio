@@ -1,4 +1,6 @@
 
+// Deprecated, use gulpfile.js
+
 module.exports = function(grunt) {
 
   grunt.log.writeln("Building hawt.io, bootstrap3 edition");
