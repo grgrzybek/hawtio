@@ -76,7 +76,7 @@ module.exports = function(grunt) {
     express: {
       server: {
         options: {
-          port: 9001,
+          port: 9009,
           bases: [ "src/main/webapp" ],
           //server: "src/test/servers/server1.js"
           middleware: [
