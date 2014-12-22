@@ -10,6 +10,7 @@ gulp.task("default", [ "bower" ], function() {
 });
 
 // Bower
+// https://www.npmjs.com/package/gulp-bower
 gulp.task("bower", function () {
   plugins["bower"]();
 });
@@ -53,13 +54,14 @@ gulp.task("watch", [ "typescript-files" ], function () {
 
 // "gulp server" starts a webserver which hosts hawt.io without backend Java server
 // this might be however very useful to connect to existing Jolokia agent
+// https://github.com/schickling/gulp-webserver
 
 // middlewares
 var redirect = require("redirecter");
 
 gulp.task("server", function () {
   gulp.src("src/main/webapp")
-      .pipe(plugins["webserver"]({ // https://github.com/schickling/gulp-webserver
+      .pipe(plugins["webserver"]({
         port: 9009,
         livereload: false,
         directoryListing: false,
