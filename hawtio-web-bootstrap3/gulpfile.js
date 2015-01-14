@@ -1,8 +1,8 @@
 
 // gulp and plugins
 var gulp = require("gulp");
+var gutil = require("gulp-util");
 var plugins = require("gulp-load-plugins")({ lazy: false });
-
 
 // http://blog.nodejitsu.com/npmawesome-9-gulp-plugins/
 // https://github.com/gulpjs/gulp-util
@@ -35,29 +35,10 @@ gulp.task("bower", function () {
 
 
 // Less
-// https://www.npmjs.com/package/gulp-less
-// https://www.npmjs.com/package/gulp-autoprefixer
-gulp.task("less", function () {
-  return gulp.src("./src/main/less/hawtio.less")
-      .pipe(sourcemaps.init())
-      .pipe(plugins.less({}).on('error', console.error.bind(console)))
-      .pipe(plugins.autoprefixer({
-        browsers: [ "> 1%", "last 2 versions" ]
-      }))
-      .pipe(sourcemaps.write("."))
-      .pipe(gulp.dest("./src/main/webapp/css"));
-});
-gulp.task("less-min", [ "less" ], function () {
-  return gulp.src("./src/main/webapp/css/hawtio.css")
-      .pipe(sourcemaps.init())
-      .pipe(plugins.minifyCss({ keepBreaks: false }))
-      .pipe(plugins.rename({ suffix: ".min" }))
-      .pipe(sourcemaps.write("."))
-      .pipe(gulp.dest("./src/main/webapp/css"));
-});
-gulp.task("less-watch", [ "less-min" ], function () {
-  gulp.watch("./src/main/less/**/*.less", [ "less" ]);
-});
+var lessTasks = require("./build/tasks/less.js")(gulp, plugins);
+gulp.task("less", lessTasks.less);
+gulp.task("less-min", [ "less" ], lessTasks.lessMin);
+gulp.task("less-watch", [ "less-min" ], lessTasks.lessWatch);
 
 
 // TypeScript compilation
