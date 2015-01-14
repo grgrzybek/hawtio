@@ -1,6 +1,7 @@
 
 // https://www.npmjs.com/package/gulp-less
 // https://www.npmjs.com/package/gulp-autoprefixer
+// https://github.com/floridoo/gulp-sourcemaps
 
 module.exports = function(gulp, plugins) {
 
@@ -33,14 +34,9 @@ module.exports = function(gulp, plugins) {
         .pipe(gulp.dest("./src/main/webapp/css"));
   }
 
-  function lessWatchTask() {
-    gulp.watch("./src/main/less/**/*.less", [ "less-min" ]);
-  }
-
   return {
     less: lessTask,
-    lessMin: lessMinTask,
-    lessWatch: lessWatchTask
+    lessMin: lessMinTask
   };
 
 };
